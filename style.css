@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: white;
+    font-family: "Winky Sans", sans-serif;
+}
+
+.container {
+  padding: 0 0;
+  padding-bottom: 20px;
+}
+.container1 {
+  padding: 20px 10%;
+  padding-bottom: 20px;
+}
+
+/* Header Styles */
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 40px;
+    color: black;
+    position: relative;
+    flex-direction: column;
+    z-index: 10; /* Ensure header is on top */
+}
+
+#header img {
+    max-height: 125px;
+    max-width: 140px;
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#header p {
+    font-size: 19px;
+    color: coral;
+    line-height: 1.5;
+}
+
+#contact {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Top navigation bar */
+.topnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+    background-color: slategray;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.topnav a {
+    text-align: center;
+    padding: 15px;
+    margin: -2px;
+    text-decoration: none;
+}
+
+.topnav li {
+    display: inline-block;
+    padding: 0;
+}
+
+.topnav a:hover {
+    color: white;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    position: relative;
+    margin: 0 1px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.menu a:hover {
+    color: black;
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rosybrown;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    z-index: 100;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    margin-left: auto;
+    position: absolute;
+    top: 20px;
+    right: 25px; /* Position the hamburger on the top right */
+    z-index: 100;
+}
+
+.card-img-top {
+    max-height: 300px; /* Adjust to your desired size */
+    width: 100%;
+    object-fit: cover;
+}
+
+/**--------Footer---------**/
+.footer {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: white;
+    background-color: black;
+    padding: 20px;
+}
+
+.footer-heading {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.footer-heading h2 {
+    margin-bottom: 2rem;
+}
+
+.footer-heading a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.footer-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem; /* Adds margin below the logo */
+}
+
+.footer-logo img {
+    max-width: 150px; /* Adjust size as necessary */
+    max-height: 150px; /* Adjust height as needed */
+    object-fit: contain
+}
+
+/* Mobile Navigation */
+@media (max-width: 900px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: slategray; /* Change to match the nav color */
+        padding: 20px;
+        z-index: 99; /* Ensure the menu appears above the content */
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Show the hamburger menu */
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    #header {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #header img {
+        position: static;
+        max-height: 100px;
+        max-width: 120px;
+        margin-bottom: -40px; /* Adjust space between the logo and text */
+    }
+
+    #header p {
+        font-size: 16px;
+        margin-bottom: 10px; /* Adjust space between the heading and tagline */
+    }
+
+    #contact {
+        position: static;
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px) {
+    #header p {
+        font-size: 14px;
+    }
+
+    #contact {
+        font-size: 12px;
+    }
+
+    #contact i {
+        font-size: 18px;
+    }
+}
+
+/**--------Responsive Design---------**/
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; /* Stack the footer items vertically on smaller screens */
+        align-items: center; /* Center the items */
+        text-align: center; /* Center the text */
+    }
+
+    .footer-heading {
+        margin-right: 0;
+        margin-bottom: 1rem; /* Add spacing between sections */
+    }
+
+    .footer-logo img {
+        max-width: 120px; /* Adjust the logo size for smaller screens */
+        max-height: 70px; /* Adjust height as needed */
+        object-fit: contain
+    }
+
+    .footer-heading a {
+        margin-bottom: 1rem; /* Add space between links */
+    }
+
+    .footer-container {
+        padding: 0 10%; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-heading {
+        flex: 1 1 100%; /* Make each footer section take up full width */
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo {
+        margin-bottom: 1rem;
+    }
+
+    .footer-heading a {
+        font-size: 14px; /* Reduce font size on very small screens */
+    }
+}
